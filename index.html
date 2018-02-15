@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>
+	    Paper plane
+	</title>
+	<meta charset="utf8">
+	<meta name="viewport"
+	      content="width=device-width, initial-scale=0, user-scalable=0">
+	</style>
+	<link type="text/css" rel="stylesheet" href="styles.css">
+	<link rel="shortcut icon" href="assets/favicon.ico">
+    </head>
+    <body>
+	<main id="app">
+	    <h2 id="loading">Paper Plane</h2>
+	    <canvas id="game"></canvas>
+	</main>
+	<script>
+	 function typeout (el, str) {
+	     function updateEl() {
+		 var len = el.textContent.length;
+		 if (len < str.length) {
+		     el.textContent += str[len];
+		 } else {
+		     el.textContent = str[0];
+		 }
+	     }
+	     return setInterval(updateEl, 300);
+	 };
+	 var loadingEl = document.getElementById("loading")
+	 var loadingInterval = window.setTimeout(function () {
+	     return typeout(loadingEl, "Loading...");
+	 }, 2000);
+	</script>
+	<script src="https://cdn.jsdelivr.net/lodash/4.17.4/lodash.min.js"></script>
+	<script>window._ || document.write('<script src=vendor/lodash.min.js><\/script>')</script>
+	<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+	<script>window.createjs || document.write('<script src=vendor/createjs.min.js><\/script>')</script>
+	<script src="main.js"></script>
+    </body>
+</html>
